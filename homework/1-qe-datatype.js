@@ -18,4 +18,14 @@ console.log("학생여부:", isStudent);
 
 // 문제 4: 좋아하는 음식 3가지를 배열에 저장하고 첫 번째 음식을 출력하세요.
 
+// 좋아하는 음식 3가지를 배열에 저장
+const favoriteFoods = ["피자", "초밥", "파스타"];
+console.log(favoriteFoods[0]); //첫번째 음식 출력
+
 // 문제 5: 사람의 정보를 객체로 만들어 이름과 나이를 저장하고 출력하세요.
+const person = {
+  name: "홍길동", // 이름 저장
+  age: 25, // 나이 저장
+};
+console.log("이름:", person.name); //이름과 나이를 출력
+console.log("나이:", person.age);
