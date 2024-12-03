@@ -1,61 +1,26 @@
-// 필요한 모듈을 불러옵니다.
-const readlineSync = require("readline-sync");
+// main.js
+import Character from "./Character.js"; // Character.js에서 모듈을 가져옴
 
-// 프로그램 시작
-function main() {
-  while (true) {
-    console.log("\n선택하세요:");
-    console.log("1. 사칙연산 계산기");
-    console.log("2. 구구단 출력기 (2~9단)");
-    const choice = readlineSync.question("원하는 기능의 번호를 입력하세요: ");
+// 캐릭터 객체 생성
+const character1 = new Character("딜러", 1, 100, 20);
+const character2 = new Character("힐러", 1, 80, 15);
+const character3 = new Character("탱커", 1, 150, 10);
 
-    if (choice === "1") {
-      calculator();
-    } else if (choice === "2") {
-      printMultiplicationTables();
-    } else {
-      console.log("1, 2 중에 입력하세요!");
-    }
-  }
-}
+// 캐릭터들 정보 출력
+console.log("캐릭터 1:", character1);
+console.log("캐릭터 2:", character2);
+console.log("캐릭터 3:", character3);
 
-// 사칙연산 계산기 함수
-function calculator() {
-  const num1 = parseFloat(readlineSync.question("첫 번째 숫자를 입력하세요: "));
-  const operator = readlineSync.question("연산자를 입력하세요 (+, -, *, /): ");
-  const num2 = parseFloat(readlineSync.question("두 번째 숫자를 입력하세요: "));
+// 캐릭터들이 각자 공격하고 회복하는 동작 수행
+character1.attack();
+character2.attack();
+character3.attack();
 
-  let result;
-  switch (operator) {
-    case "+":
-      result = num1 + num2;
-      break;
-    case "-":
-      result = num1 - num2;
-      break;
-    case "*":
-      result = num1 * num2;
-      break;
-    case "/":
-      result = num2 !== 0 ? num1 / num2 : "0으로 나눌 수 없습니다.";
-      break;
-    default:
-      result = "잘못된 연산자입니다.";
-  }
+character1.heal();
+character2.heal();
+character3.heal();
 
-  console.log(`결과: ${result}`);
-}
-
-// 구구단 출력 함수
-function printMultiplicationTables() {
-  console.log("\n구구단 출력 (2단부터 9단까지)");
-  for (let i = 2; i <= 9; i++) {
-    console.log(`\n${i}단`);
-    for (let j = 1; j <= 9; j++) {
-      console.log(`${i} x ${j} = ${i * j}`);
-    }
-  }
-}
-
-// 메인 함수 실행
-main();
+// 레벨업 수행
+character1.levelUp();
+character2.levelUp();
+character3.levelUp();
