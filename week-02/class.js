@@ -19,8 +19,8 @@ class Character {
   }
 
   levelUp() {
-    const hpIncrease = Math.floor(Math.random() * 30) + 1; // 1~30 랜덤 체력 증가
-    const atkIncrease = Math.floor(Math.random() * 10) + 1; // 1~10 랜덤 공격력 증가
+    const hpIncrease = Math.floor(Math.random() * this.hp) + 1; // 1~30 랜덤 체력 증가
+    const atkIncrease = Math.floor(Math.random() * this.atk) + 1; // 1~10 랜덤 공격력 증가
     this.hp += hpIncrease;
     this.atk += atkIncrease;
     this.lv += 1;
@@ -31,7 +31,7 @@ class Character {
 }
 
 const character1 = new Character("딜러", 1, 100, 20);
-const character2 = new Character("힐러", 1, 80, 15);
+const character2 = new Character("힐러", 1, 80, 5);
 const character3 = new Character("멍청이", 1, 10000, 1);
 
 console.log("캐릭터 1:", character1);
